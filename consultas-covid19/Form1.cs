@@ -25,7 +25,26 @@ namespace consultas_covid19
             connetionString = @"Data Source=DESKTOP-LVVMBVB\SQLEXPRESS;Initial Catalog=consultas-covid19;User ID=sa;Password=123";
             cnn = new SqlConnection(connetionString);
             cnn.Open();
-            MessageBox.Show("Connection Open  !");
+
+            SqlCommand command;
+
+            SqlDataReader dataReader;
+            String sql, Output = "";
+
+            sql = "SELECT TutorialID, TutorialName FROM demotb";
+            command = new SqlCommand(sql, cnn);
+            dataReader = command.ExecuteReader();
+
+            while (dataReader.Read())
+            {
+                Output = Output + dataReader.GetValue(0) + " - " + dataReader.GetValue(1) + "\n";
+            }
+
+
+            MessageBox.Show(Output);
+
+            dataReader.Close();
+            command.Dispose();            
             cnn.Close();
         }
     }
