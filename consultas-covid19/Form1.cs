@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,17 @@ namespace consultas_covid19
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string connetionString;
+            SqlConnection cnn;
+            connetionString = @"Data Source=DESKTOP-LVVMBVB\SQLEXPRESS;Initial Catalog=consultas-covid19;User ID=sa;Password=123";
+            cnn = new SqlConnection(connetionString);
+            cnn.Open();
+            MessageBox.Show("Connection Open  !");
+            cnn.Close();
         }
     }
 }
