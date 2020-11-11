@@ -13,6 +13,12 @@ namespace consultas_covid19
 {
     public partial class Form1 : Form
     {
+        private int stockMinimoVacunas = 10000;
+
+        private int stockActualVacunas = 10000000;
+        private string[] puntosDeReparto = {"Sacaba","Cercado","Quillacollo"};
+
+
         public Form1()
         {
             InitializeComponent();
