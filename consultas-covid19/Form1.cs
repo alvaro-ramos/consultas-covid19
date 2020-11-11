@@ -16,7 +16,9 @@ namespace consultas_covid19
         private int stockMinimoVacunas = 10000;
 
         private int stockActualVacunas = 10000000;
+
         private string[] puntosDeReparto = {"Sacaba","Cercado","Quillacollo"};
+        
 
 
         public Form1()
